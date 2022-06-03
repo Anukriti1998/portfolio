@@ -29,8 +29,9 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+#2. Add Blog app to settings
 INSTALLED_APPS = [
+    'blog.apps.BlogConfig',
     'jobs.apps.JobsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
