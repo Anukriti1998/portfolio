@@ -1,13 +1,16 @@
+<!--#step4 file found allblogs-->
+
+
 <!doctype html>
 <html lang="en">
   <head>
-    {% load static %}
+      {% load static %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 
-    <title>Soumik Chakraborty</title>
+    <title>{{ blog.title }}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
 
@@ -101,7 +104,7 @@
               <a class="nav-link" href="{% static 'Job Description.docx' %}">Resume</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'allblogs' %}">Blog</a>
+              <a class="nav-link active" href="{% url 'allblogs' %}">Blog</a>
             </li>
           </div>
         </div>
@@ -110,39 +113,14 @@
 </header>
 
 <main>
-
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Hi I' m Soumik</h1>
-        <p class="lead text-muted">Hey I am Soumik Chakraborty and I dont like website devlopment.</p>
-        <p>
-          <a href="mailto:chakraborty.soumik.95@gmail.com" class="btn btn-primary my-2">Email</a>
-        </p>
-        <img src="{% static 'WIN_20220606_12_07_21_Pro (2).jpg' %}"/>
-      </div>
-    </div>
-  </section>
-
-  <div class="album py-5 bg-light">
     <div class="container">
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-        {% for job in jobs.all %}
-        <div class="col">
-          <div class="card shadow-sm">
-            <img class="bd-placeholder-img card-img-top" src = "{{ job.image.url }}"/>
-            <div class="card-body">
-              <p class="card-text">{{ job.summary }}</p>
-            </div>
-          </div>
-        </div>
-
-        {% endfor %}
-      </div>
+        <h1 class="text-center pt-3">{{ blog.title }}</h1>
+        <br/>
+        <p class="text-center">{{ blog.pubdate }}</p>
+        <img class="img-fluid" src="{{ blog.image.url }}"/>
+        <br/>
+        <p>{{ blog.body }}</p>
     </div>
-  </div>
 
 </main>
 

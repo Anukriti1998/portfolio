@@ -14,6 +14,14 @@ class Blog(models.Model):
     body = models.TextField()
     image = models.ImageField(upload_to= 'images/')
 
+    def __str__(self): #so this is the automatic fnunction the server of admin site will look for naming the nuber of blog objects you made if not provided it default is Blog No.1, Blog No. 2
+        return self.title
+
+    def summary(self):
+        return self.body[:100] + str('...')
+    def formatTime(self):
+        return self.pubdate.strftime('%b %e %Y')
+
 #2. Add Blog app to settings
 
 #3. Create migration
