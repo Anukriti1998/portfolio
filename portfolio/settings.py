@@ -120,10 +120,13 @@ STATICFILES_DIR = [
     os.path.join(BASE_DIR, 'portfolio/static/')
 ]
 
-STATIC_URL = 'static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_ROOT = 'C:/Users/schakraborty/Desktop/portfolio/portfolio/static'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = 'C:/Users/schakraborty/Desktop/portfolio/portfolio/static'
 # STATIC_ROOT = 'C:\Users\schakraborty\Desktop\portfolio\portfolio\static'
+
+STATIC_URL = '/static/'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
